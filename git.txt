@@ -1,0 +1,19 @@
+git init
+git add
+git commit
+git status
+git clone
+git pull
+git remote add 
+git log
+git reset
+	git reset --hard <commit>
+	git reset --hard origin/master
+git reflog 
+git checkout - change HEAD
+git merge
+git push origin master - push to master branch
+git push --set-upstream origin feature
+git fetch - get the latest version of the remote server code
+
+pull requests - fork 
