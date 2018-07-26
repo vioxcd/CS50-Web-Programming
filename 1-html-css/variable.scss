@@ -1,0 +1,63 @@
+/*
+To convert scss to css, use
+>> sass variables.scss variables.css
+
+To make sure scss file automatically recompiled, use
+>> sass --watch variables.scss:variable.css
+*/
+
+$color: red;
+
+ul {
+    font-size: 14px;
+    color: $color;
+}
+
+ol {
+    font-size: 18px;
+    color: $color;
+}
+
+/*
+# NESTING
+*/
+
+div {
+    font-size: 18px;
+
+    p {
+        color: blue;
+    }
+
+    ul {
+        color: green;
+    }
+}
+
+/*
+# INHERITANCE
+*/
+
+%message {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+.success {
+    @extend %message
+    background-color: green;
+}
+
+.warning {
+    @extend %message
+    background-color: yellow;
+}
+
+.error {
+    @extend %message
+    background-color: red;
+}

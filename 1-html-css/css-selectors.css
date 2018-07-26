@@ -1,0 +1,105 @@
+/* CSS */
+
+/*
+# MULTIPLE SELECTOR
+# use comma
+
+h1, h2, h3 {
+    style h1, h2 and h3
+}
+
+# DESCENDANTS OF ELEMENTS
+# use spaces
+
+ul li {
+    style all li inside ul
+}
+
+# IMMEDIATE CHILDREN
+# use >
+
+ul > li {
+    style immediate children li inside ul
+}
+
+# ATTRIBUTE SELECTOR
+# use [attribute]
+
+input[type=text] {
+    style input tag with type 'text'
+}
+
+# PSEUDOCLASS
+# use :
+
+button:hover {
+    this is pseudoclass
+}
+
+### PSEUDOELEMENTS
+### ::
+
+# BEFORE
+# ::before
+
+a::before {
+    give additional information before content of the tag
+}
+
+# SELECTION
+# ::selection
+
+p::selection {
+    style tag when it is selected
+}
+
+*/
+
+
+/*
+HOW TO MAKE COVER
+
+    background: url() no-repeat center center fixed;
+    background-size: cover;
+
+ */
+
+ /*
+ HOT TO MAKE WRAPPER
+
+    width: ;
+    margin: 0 auto;
+    text-align: center;
+ */
+
+ /*
+ HOW TO MAKE LINK
+
+    link - not visited
+    visited - already visited
+    hover - hover at link
+    active -
+*/
+
+/*
+HOW TO MAKE THINGS GO EITHER LEFT OR RIGHT
+
+    float: left;
+    float: right;
+*/
+
+/*
+HOW TO MAKE GRADIENT
+
+background: linear-gradient(to bottom right, red, white);
+
+linear-gradient, radial-gradient
+*/
+
+/*
+STYLING INPUT FORM
+*/
+
+/*
+BOX SIZING
+*/
