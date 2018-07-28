@@ -1,0 +1,30 @@
+/*{
+    "origin": "Tokyo",
+    "destination": "Shanghai",
+    "duration": 185,
+    "passengers": ["Alice", "Bob"]
+}*/
+
+// More compact (nested)
+
+{
+    "origin": {
+        "city": "Tokyo",
+        "code": "HND"
+    },
+    "destination": {
+        "city": "Shanghai",
+        "code": "PVG"
+    },
+    "duration": 185,
+    "passengers": ["Alice", "Bob"]
+}
+
+/* Accessing data through links look like this
+
+flights/
+flights/28
+flights//28/passengers/
+flights//28/passengers/6
+
+*/

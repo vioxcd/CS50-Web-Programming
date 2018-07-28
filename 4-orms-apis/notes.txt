@@ -1,0 +1,129 @@
+INSERT INTO flights
+    (origin, destination, duration)
+    VALUES ('New York', 'Paris', 540)
+
+flight = Flight(origin="New York",
+                destination="Paris",
+                duration=540)
+db.session.add(flight)
+
+===============================
+
+SELECT * FROM flights
+
+Flight.query.all()
+
+===============================
+
+SELECT * FROM flights
+    WHERE origin = 'Paris'
+
+flight.query.filter_by(origin="Paris").all()
+
+===============================
+
+SELECT * FROM flights
+    WHERE origin = 'Paris' LIMIT 1
+
+Flight.query.filter_by(origin='Paris').first()
+
+===============================
+
+SELECT COUNT(*) FROM flights
+    WHERE origin = 'Paris'
+
+Flight.query.filter_by(origin='Paris').count()
+
+===============================
+
+SELECT * FROM flights WHERE id = 28
+
+Flight.query.get(28)
+
+===============================
+
+UPDATE flights SET duration = 280
+    WHERE id = 6
+
+flight = Flight.query.get(6)
+flight.duration = 280
+
+===============================
+
+DELETE FROM flights WHERE id = 28
+
+flight = Flight.query.get(28)
+db.session.delete(flight)
+
+===============================
+
+COMMIT
+
+db.session.commit()
+
+===============================
+
+SELECT * FROM flights
+    ORDER BY origin
+
+Flight.query.order_by(Flight.origin).all()
+
+add desc/asc to the class
+
+Flight.query.order_by(Flight.origin.desc()).all()
+
+===============================
+
+SELECT * FROM flights
+    WHERE origin != 'Paris'
+
+Flight.query.filter(
+                Flight.origin != 'Paris').all()
+
+===============================
+
+SELECT * FROM flights
+    WHERER origin IN ('Tokyo', 'Paris')
+
+Flight.query.filter(
+                Flight.origin.in_(["Tokyo", "Paris"])).all()
+
+===============================
+
+SELECT * FROM flights
+    WHERE origin = 'Paris'
+    AND duration > 500
+
+Flight.query.filter(
+                and_(Flight.origin == "Paris",
+                Flight.duration > 500)).all()
+
+same with OR as or_
+===============================
+
+SELECT * FROM flights
+    JOIN passengers
+    ON flights.id = passengers.flight_id
+
+db.session.query(Flight, Passenger).filter(
+                Flight.id == Passenger.flight_id).all()
+===============================
+
+AFTER RELATIONSHIP IS ESTABLISHED
+
+===============================
+
+SELECT * FROM passengers
+    WHERE flight_id = 1
+
+Flight.query.get(1).passengers
+
+===============================
+
+SELECT * FROM flights JOIN passengers
+    ON flights.id = passengers.flight_id
+    WHERE passengers.name = 'Alice'
+
+Passenger.query.filter_by(name="Alice").first().flight
+
+===============================

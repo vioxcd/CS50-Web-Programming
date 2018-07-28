@@ -1,0 +1,25 @@
+HTTP Methods
+
+- GET: retrieve resource
+- POST: create a new resource
+- PUT: replace a resource
+- PATCH: update a resource
+- DELETE: delete a resource
+
+in Python
+
+- requests.get
+- requests.post
+- requests.put
+- requests.patch
+- requests.delete
+
+Status Codes
+
+- 200 OK
+- 201 Created
+- 400 Bad Request
+- 403 Forbidden
+- 404 Not Found
+- 405 Method Not Allowed
+- 422 Unprocessable Entity
